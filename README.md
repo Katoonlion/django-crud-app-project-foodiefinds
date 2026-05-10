@@ -1,6 +1,7 @@
 ## Foodie Finds
 
 ![Home Page](https://img1.pic.in.th/images/FoodieFinds-Home.png)
+![Index Page](https://img1.pic.in.th/images/FoodieFinds-Index.png)
 
 <small>
 
