@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<section class="้home-hero">
+    <div class="hero-center">
+        <h1>
+            Discover.<br>
+            <span>Try.</span> Love.
+        </h1>
+
+        <p>
+            Discover cozy cafe, restaurant hidden gems, delicious places<br>
+            and share your food experiences with<br>
+            a community that loves food as much as you do.
+        </p>
+
+        <div class="hero-divider">
+            <span></span>
+            <p>♥</p>
+            <span></span>
+        </div>
+
+        <div class="hero-buttons">
+            <a href="{% url 'login' %}" class="btn-primary ">Sign in</a>
+            <a href="{% url 'signup' %}" class="btn-outline">Sign up</a>
+        </div>
+
+    </div>
+</section>
+
+{% endblock %}

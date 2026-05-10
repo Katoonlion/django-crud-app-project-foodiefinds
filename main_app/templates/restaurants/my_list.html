@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/my-list.css' %}" />
+{% endblock %}
+
+{% block content %}
+<section class="my-list-page">
+    <h1>My Restaurant List</h1>
+
+    <div class="filter-tabs">
+        <a href="{% url 'my-list' %}">All</a>
+        <a href="{% url 'my-list' %}?status=want">Want to Try</a>
+        <a href="{% url 'my-list' %}?status=visited">Visited</a>
+    </div>
+
+    <div class="my-list-table">
+        <div class="table-header">
+            <p>Photo</p>
+            <p>Name</p>
+            <p>Location</p>
+            <p>Status</p>
+            <p>Rating</p>
+            <p>Action</p>
+        </div>
+
+        {% for user_restaurant in user_restaurants %}
+            <div class="table-row">
+                <img src="{{ user_restaurant.restaurant.image_url }}" alt="{{ user_restaurant.restaurant.name }}">
+
+                <p>{{ user_restaurant.restaurant.name }}</p>
+                <p>{{ user_restaurant.restaurant.location }}</p>
+
+                <span class="status-btn {{ user_restaurant.status }}">
+                {{ user_restaurant.get_status_display }}
+                </span>
+
+                <p>
+                    {% if user_restaurant.rating %}
+                        ⭐ {{ user_restaurant.rating }}
+                    {% else %}
+                        -
+                    {% endif %}
+                </p>
+
+                <a href="{% url 'restaurant-detail' user_restaurant.restaurant.id %}" class="action-btn">
+                    View
+                </a>
+            </div>
+
+            {% empty %}
+                <p class="empty-message">You have not added any restaurants yet.</p>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}

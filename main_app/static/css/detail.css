@@ -1,0 +1,95 @@
+.detail-page {
+    width: 85%;
+    max-width: 1100px;
+    margin: 60px auto;
+}
+
+.detail-card {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    gap: 40px;
+    background-color: white;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+.detail-image img {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.detail-info h1 {
+    font-size: 36px;
+    margin-top: 0;
+    margin-bottom: 24px;
+}
+
+.detail-info p {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.my-info {
+    margin-top: 28px;
+}
+
+.review-box {
+    background-color: #f2eadf;
+    padding: 18px;
+    border-radius: 10px;
+    min-height: 90px;
+}
+
+.detail-actions,
+.owner-actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 24px;
+}
+
+.detail-actions a,
+.owner-actions a,
+.back-link {
+    text-decoration: none;
+    background-color: #f2eadf;
+    color: #2b2118;
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.owner-actions a:last-child {
+    background-color: #e75b4c;
+    color: white;
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 28px;
+}
+
+.status-btn {
+    padding: 10px 18px;
+    border-radius: 10px;
+    font-weight: bold;
+    display: inline-block;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.status-btn:hover {
+    transform: scale(1.05);
+}
+
+.status-btn.want {
+    background-color: #f6c453;
+}
+
+.status-btn.visited {
+    background-color: #4caf50;
+    color: white;
+}

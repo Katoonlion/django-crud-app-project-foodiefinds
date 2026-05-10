@@ -1,0 +1,97 @@
+.form-container {
+    width: 100%;
+    max-width: 620px;
+    margin: -40px auto;
+}
+
+.form-container h1 {
+    text-align: center;
+    font-size: 42px;
+    color: #3b2a22;
+    margin-bottom: 32px;
+}
+
+.restaurant-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.restaurant-form p {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    margin: 0;
+}
+
+.restaurant-form label {
+    width: 130px;
+    font-size: 18px;
+    font-weight: 500;
+    color: #3b2a22;
+}
+
+.restaurant-form input,
+.restaurant-form textarea,
+.restaurant-form select {
+    flex: 1;
+    padding: 6px 10px;
+    border: 2px solid #d8cfc2;
+    border-radius: 10px;
+    font-size: 16px;
+    background-color: white;
+}
+
+.restaurant-form textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.restaurant-form input:focus,
+.restaurant-form textarea:focus,
+.restaurant-form select:focus {
+    outline: none;
+    border-color: #f97316;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 24px;
+}
+
+
+/* --- Btn --- */
+
+.form-actions button,
+.form-actions a {
+    padding: 12px 28px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.form-actions button {
+    border: none;
+    background-color: #f97316;
+    color: white;
+    cursor: pointer;
+}
+
+.form-actions a {
+    border: 2px solid #f97316;
+    color: #3b2a22;
+    background-color: transparent;
+}
+
+.form-actions button:hover {
+    background-color: #ea580c;
+}
+
+.form-actions a:hover {
+    background-color: #f97316;
+    color: white;
+}

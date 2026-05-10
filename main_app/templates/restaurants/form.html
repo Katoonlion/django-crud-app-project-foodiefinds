@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/form.css' %}" />
+{% endblock %}
+
+{% block content %}
+<section class="form-container">
+    {% if restaurant %}
+        <h1>Edit Restaurant</h1>
+    {% else %}
+        <h1>Add Restaurant</h1>
+    {% endif %}
+
+    <form method="POST" class="restaurant-form">
+        {% csrf_token %}
+
+        {{ restaurant_form.as_p }}
+        {{ review_form.as_p }}
+
+        <div class="form-actions">
+            <button type="submit">Save</button>
+            <a href="{% url 'restaurant-index' %}">Cancel</a>
+        </div>
+    </form>
+</section>
+{% endblock %}

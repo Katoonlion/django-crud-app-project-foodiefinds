@@ -1,0 +1,87 @@
+.my-list-page {
+    width: 85%;
+    max-width: 1100px;
+    margin: 60px auto;
+}
+
+.my-list-page h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.filter-tabs {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.filter-tabs a {
+    text-decoration: none;
+    background-color:#f8cc8d;
+    color: #2b2118;
+    padding: 12px 22px;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.my-list-table {
+    background-color: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+}
+
+.table-header,
+.table-row {
+    display: grid;
+    grid-template-columns: 100px 1.5fr 1.5fr 1fr 1fr 1fr;
+    align-items: center;
+    gap: 16px;
+    padding: 14px 24px;
+}
+
+.table-header {
+    background-color: #f8cc8d;
+    font-weight: bold;
+}
+
+.table-row {
+    border-top: 1px solid #eadfd0;
+}
+
+.table-row img {
+    width: 72px;
+    height: 56px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.status-btn {
+    width: fit-content;
+    padding: 7px 14px;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.status-btn.want {
+    background-color: #f6c453;
+}
+
+.status-btn.visited {
+    background-color: #4caf50;
+    color: white;
+}
+
+.action-btn {
+    text-decoration: none;
+    background-color: #f8cc8d;
+    color: #2b2118;
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-weight: bold;
+    width: fit-content;
+}
+
+.empty-message {
+    padding: 30px;
+}

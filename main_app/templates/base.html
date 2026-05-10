@@ -1,0 +1,57 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="{% static 'css/base.css' %}" />
+
+    <link rel="icon" href="{% static 'images/icon-logo.png' %}" type="image/png">
+    <title>Foodie Finds</title>
+
+    {% block head %} 
+    {% endblock %}
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="{% url 'restaurant-index' %}" class="logo">
+                  <img src="{% static 'images/logo.png' %}" alt="Foodie Finds Logo">
+            </a>
+
+            <div class="nav-links">
+                <a href="{% url 'restaurant-index' %}">Home</a>
+
+                {% if user.is_authenticated %}
+                    <a href="{% url 'my-list' %}">My List</a>
+                {% endif %}
+                
+                {% if user.is_authenticated %}
+                    <a href="{% url 'restaurant-create' %}">Add Restaurant</a>
+                {% endif %}
+
+                {% if user.is_authenticated %}
+                    <a href="#">Hi, {{ user.username }}</a>
+
+                    <form action="{% url 'logout' %}" method="POST" class="logout-form">
+                        {% csrf_token %}
+                        <button type="submit" class="nav-auth-btn">Sign Out</button>
+                    </form>
+                {% else %}
+                    <a href="{% url 'login' %}" class="nav-auth-btn">Sign In</a>
+                    <a href="{% url 'signup' %}" class="nav-auth-btn">Sign Up</a>
+                {% endif %}
+
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+    
+</body>
+</html>

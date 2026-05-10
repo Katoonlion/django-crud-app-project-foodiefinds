@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}" />
+{% endblock %}
+
+{% block content %}
+<section class="restaurant-index-page">
+    <div class="restaurant-header">
+        <h2>Restaurant List</h2>
+
+        <div class="filter-tabs">
+            <a href="{% url 'restaurant-index' %}">All</a>
+            <a href="{% url 'restaurant-index' %}?status=want">Want to Try</a>
+            <a href="{% url 'restaurant-index' %}?status=visited">Visited</a>
+        </div>
+    </div>
+
+    <section class="restaurant-grid">
+        {% for card in restaurant_cards %}
+            <a href="{% url 'restaurant-detail' card.restaurant.id %}" class="card-link">
+                
+                <div class="restaurant-card">
+                    <img src="{{ card.restaurant.image_url }}" alt="{{ card.restaurant.name }}">
+
+                    <div class="card-content">
+                        <h3>{{ card.restaurant.name }}</h3>
+                        <p>{{ card.restaurant.location }}</p>
+
+                        {% if card.user_restaurant %}
+                            <span class="status-btn {{ card.user_restaurant.status }}">
+                                {{ card.user_restaurant.get_status_display }}
+                            </span>
+                        {% else %}
+                            <span class="status-btn add">Add to List</span>
+                        {% endif %}               
+                    </div>
+                    
+                </div>
+            </a>
+
+        {% endfor %}
+    </section>
+</section>
+
+{% endblock %}
+
