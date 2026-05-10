@@ -1,13 +1,23 @@
 {% extends 'base.html' %}
 
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/delete.css' %}">
+{% endblock %}
+
 {% block content %}
-<h1>Delete Restaurant</h1>
+<section class="delete-page">
+    <div class="delete-card">
+        <h1>Delete Restaurant</h1>
 
-<p>Are you sure you want to delete {{ restaurant.name }}?</p>
+        <p>Are you sure you want to delete <strong>{{ restaurant.name }}</strong>?</p>
 
-<form method="POST">
-    {% csrf_token %}
-    <button type="submit">Yes, delete</button>
-    <a href="{% url 'restaurant-detail' restaurant.id %}">Cancel</a>
-</form>
+        <form method="POST" class="delete-actions">
+            {% csrf_token %}
+            <button type="submit" class="delete-btn">Yes, delete</button>
+            <a href="{% url 'restaurant-detail' restaurant.id %}" class="cancel-btn">Cancel</a>
+        </form>
+    </div>
+</section>
 {% endblock %}
